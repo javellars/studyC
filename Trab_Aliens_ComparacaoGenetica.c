@@ -8,8 +8,8 @@ int main(){
     scanf("%d",&testes);
     getchar();
     for(cont=0;cont<testes;cont++){
-        scanf("%s", &letra);
-        scanf("%s", &letra2);
+        scanf("%s", letra);
+        scanf("%s", letra2);
         
         for(cont2=0;cont2<12;cont2++){
             // for 12
