@@ -11,7 +11,7 @@ int main(){
     int nc, nl, l, c; 
     
     
-    scanf("%d %d",  &nc,&nl);// aqui entra o valor da linha e da coluna
+    scanf("%d %d",  &nl,&nc);// aqui entra o valor da linha e da coluna
     
     int m1[nc][nl];//define que a matriz vai ser formada pela coluna com o tamanho inserido em nc e pelas linhas digitadas em nl
     
@@ -21,11 +21,11 @@ int main(){
         }    
     }        
     
-    for (l=0; l < nl; l++){//percorre linhas 
-        for (c=0; c < nc; c++){//percorre colunas, 
+    for (l=0; l < nc; l++){//percorre linhas 
+        for (c=0; c < nl; c++){//percorre colunas, 
             printf("%d ",m1[c][l]); //exibe a matriz final
-            printf("\n");
         }    
+    printf("\n");
 }
 
 // em for se tiver só um valor não é necessário usar as {}
