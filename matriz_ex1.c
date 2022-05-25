@@ -13,7 +13,7 @@ int main(){
     
     scanf("%d %d",  &nl,&nc);// aqui entra o valor da linha e da coluna
     
-    int m1[nc][nl];//define que a matriz vai ser formada pela coluna com o tamanho inserido em nc e pelas linhas digitadas em nl
+    int m1[nl][nc];//define que a matriz vai ser formada pela coluna com o tamanho inserido em nc e pelas linhas digitadas em nl
     
     for (l=0; l < nl; l++){ //enquando l for menor que o nl digitado pelo usuário o laço continua rodando
         for (c=0; c < nc; c++){ //enquanto c for menor que o numero de colunas digitado antes
