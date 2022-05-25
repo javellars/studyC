@@ -8,7 +8,9 @@ int main(){
     
     for(q=strlen(qualquer)-2;q>=0;q--){ // esse for começa na última posição do tamanho da variável digitada, menos 2, por cauda do \n e do null. Ela vai em sentido contratiro.
         printf("%c", qualquer[q]);//aqui vai imprimir o caractere na posição q da variável qualquer.
-        
     }
+    
+    printf("\n");
+    
     return 0;
-}
+}}
