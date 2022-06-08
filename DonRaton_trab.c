@@ -13,30 +13,61 @@ int main(){
         }
     }
     
-    for(c1=0; c1<colelin; c1++){
-        for(c2=0; c2<colelin; c2++){
-            printf("%d ", m1[c1][c2]);//aqui ele vai printar os valores da matriz
-        }
-    printf("\n");//printa um espaço
+    // for(c1=0; c1<colelin; c1++){
+    //     for(c2=0; c2<colelin; c2++){
+    //         printf("%d ", m1[c1][c2]);//aqui ele vai printar os valores da matriz
+    //     }
+    // printf("\n");//printa um espaço
         
-    }
+    // }
     
-    int start,stop;// declara as variáveis para começar a analisar a questão da passagem nas cidades
+    int start,stop,cidadeAnterior=0,dist=0;// declara as variáveis para começar a analisar a questão da passagem nas cidades
+    int cidadetemp;//variável temporária pra guardar a cidade que ele planeja ir 
+    int passadas[colelin],p;
+        for(p=0;p<colelin ;p++){//aqui a gente define que os elementos da passadas vai começar com o valor 0
+            passadas[p]=0;
+        }
+
+    
     
     scanf("%d", &start);//scanfa a cidade que ele está
+    passadas[start]=1;//conta a primeira vez
     scanf("%d", &stop);//scanfa a cidade que ele quer ir 
     
+    int passeata[colelin],quantpasseata=0;//passadas organizadas
+        passeata[quantpasseata]=start;//aqui ele conta o que começou e organiza os baragudegs pra exibir no final por one ele passou
+        quantpasseata++;
+    
     while(start!=stop){//enquanto a cidade de início for diferente da cidade que ele quer chegar 
-        for(c1 = 0; c1 < colelin; c1++){
+    
+        for(c1 = 0; c1 < colelin; c1++){//aqui ele vai rodar pra cada cidade
             
-          if(m1[start][c1] < cidadeAnterior && m1[start][c1] > 0){ //se a matriz começando na cidade inicio for menor que a cidadeanterior e matriz menor que zero
-                
-            }
-                
+            if(((cidadeAnterior > m1[start][c1] && m1[start][c1] > 0 )|| cidadeAnterior == 0) && passadas[c1]==0){ //se o valor de start for menor que cidadeAnterior e start for maior que zero
+                cidadeAnterior = m1[start][c1];
+                cidadetemp = c1;
             }
         }
-        
+        start=cidadetemp;
+        passadas[start]=1;
+        passeata[quantpasseata]=start;
+        quantpasseata++;
+        dist=dist+cidadeAnterior;
+        cidadeAnterior=0;
     }
+    
+        
+        printf("Distancia total entre %d e %d: %d\n",passeata[0],stop,dist);
+            
+        for(c2=0;c2<quantpasseata;c2++){    
+            printf("%d",passeata[c2]);
+            if(c2==quantpasseata-1){}
+            else{
+                printf("->");
+            }
+        }
+    printf("\n");
+    
+    
     
     //fazer alguma coisa que calcule o valor da distância de start e stop
     //indicar o caminho que ele fez
