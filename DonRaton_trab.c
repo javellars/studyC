@@ -58,6 +58,7 @@ int main(){
         
         printf("Distancia total entre %d e %d: %d\n",passeata[0],stop,dist);
             
+            printf("Caminho: ");
         for(c2=0;c2<quantpasseata;c2++){    
             printf("%d",passeata[c2]);
             if(c2==quantpasseata-1){}
