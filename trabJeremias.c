@@ -4,14 +4,15 @@
 #define cv 1002
 
 int main(){
-    int i,vetor, quantMaiusculo[26], quantMin[26], quantNum[10];//cv é o contador do vetor
+    int i,j,vetor, quantMaiusculo[26], quantMin[26], quantNum[10];//cv é o contador do vetor
     char vetorparagrafo[cv], letraMaiusculo[26] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'}, letraMinuscula[26] = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'}; //criar um vetor para texto, com 1002 casas
     int letraM,letraMN,num,numeros[10]={'0','1','2','3','4','5','6','7','8','9'};
     
     for(int j = 0; j < 26; j++){
         quantMaiusculo[j] = 0;
         quantMin[j] = 0;
-        if (j<10)
+        
+        if (j<10){
         quantNum[j] = 0;
         }
         
@@ -20,12 +21,14 @@ int main(){
 //verificar quantas vezes cada caracter apareceu
 //rodar os três for(maiuscula, minuscula e numero)
 //quando achar FIM parar de rodar o código
-while(1 == 1){
+
     
 fgets(vetorparagrafo,1002,stdin);
 
+while(1 == 1){
 
 for(i=0; i < strlen(vetorparagrafo); i++){
+strcmp(vetorparagrafo, "FIM\n");    
     
     for(int j = 0; j < 26; j++){
         if(letraMaiusculo[j] == vetorparagrafo[i]){
@@ -49,22 +52,29 @@ for(i=0; i < strlen(vetorparagrafo); i++){
 }
 
 
-}
 
-for(int j = 0; j < 26; j++){
-   printf("\n%c: %d\n ",letraMaiusculo[j], quantMaiusculo[j]);
+printf("%c: ", letraMaiusculo[j]);
+for(int j =0; j< letraMaiusculo [0]; j++){
+ printf ("*");
 }
+printf ("%d", letraMaiusculo [0]);
+//printf ("%d - %d", letraMaiusculo [0], probabilidade);
+
+
+/*for(int j = 0; j < 26; j++){
+   printf("\n%c: %d\n ",letraMaiusculo[j], quantMaiusculo[j]);
+}*/
 
 for(int j = 0; j < 26; j++){
    printf("\n%c: %d\n ",letraMinuscula[j], quantMin[j]);
 }
 
 for(int j = 0; j < 10; j++){
-   printf("\n%d: %d\n ",numeros[j], quantNum[j]);
+   printf("\n%c: %d\n ",numeros[j], quantNum[j]);
 }
 
-
-
+break;
+}
 
 
 
