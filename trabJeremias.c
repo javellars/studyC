@@ -53,11 +53,18 @@ strcmp(vetorparagrafo, "FIM\n");
 
 
 
-printf("%c: ", letraMaiusculo[j]);
-for(int j =0; j< letraMaiusculo [0]; j++){
- printf ("*");
+
+
+
+printf("Caracteres Maiusculos:\n");
+for(int j = 0; j < 26; j++){
+    printf("%c: ", letraMaiusculo[j]);
+    for(int ju =0; ju< quantMaiusculo [j]; ju++){
+     printf ("*");
+    }
+    float probabilidadeM= (letraMaiusculo[j]/vetorparagrafo[i]);
+    printf ("%d - %f\n", quantMaiusculo[j], probabilidadeM);
 }
-printf ("%d", letraMaiusculo [0]);
 //printf ("%d - %d", letraMaiusculo [0], probabilidade);
 
 
@@ -65,14 +72,27 @@ printf ("%d", letraMaiusculo [0]);
    printf("\n%c: %d\n ",letraMaiusculo[j], quantMaiusculo[j]);
 }*/
 
+
+
+printf("Caracteres Minusculos:\n");
 for(int j = 0; j < 26; j++){
-   printf("\n%c: %d\n ",letraMinuscula[j], quantMin[j]);
+    printf("%c: ", letraMinuscula[j]);
+    for(int ju =0; ju< quantMin [j]; ju++){
+     printf ("*");
+    }
+    float probabilidadeMN= (letraMinuscula[j]/vetorparagrafo[i]);
+    printf ("%d - %f\n", quantMin[j], probabilidadeMN);
 }
 
-for(int j = 0; j < 10; j++){
-   printf("\n%c: %d\n ",numeros[j], quantNum[j]);
+printf("Dígitos:\n");
+for(int j = 0; j < 26; j++){
+    printf("%c: ", numeros[j]);
+    for(int ju =0; ju< quantNum [j]; ju++){
+     printf ("*");
+    }
+    float probabilidadeN= (numeros[j]/vetorparagrafo[i]);
+    printf ("%d - %f\n", quantNum[j], probabilidadeN);
 }
-
 break;
 }
 
