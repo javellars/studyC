@@ -1,80 +1,33 @@
 #include <stdio.h>
 
-int main(){
-    float notas[20], j=0;
-    int i=0;
-    
-    for(i=0; i<20; i++){
-        scanf("%f", &notas[i]);
+int main()
+{
+    float notas[20],j;//aqui o vetor notas só dtermina a quantidade de espaços que podem ser usados
+    int cont;
+    for(cont=0;cont<20;cont++){//aqui eu defino que serão captadas 20 informações, pq mais que isso excede a quantidade de espaços
+        scanf("%f", &notas[cont]);//aqui eu coleto os dados em suas respectivas posições
     }
-//até aqui ele recebe e armazena o valor no vetor
+    printf("digite a nota a ser encontrada:");
+    scanf("%f", &j);//insere a nota j
     
     
-while(j>=0){   //faz rodar enquanto for maior ou igual a 0
-    
-    
-    scanf("%f", &j);//recebe o numero a ser procurado
-    if(j<0){//verifica se o numero a ser procurado é menor que zero, se for ele encerra o programa
-        break;
+cont=0;    
+// ele faz uma busca linear
+while((notas[cont]!=j)&& cont<20){//aqui ele vai processar as notas e rodar enquanto o conteudo da posição cont for diferente da nota digitada, e enqunto as posições estiverem em 20 
+    cont++;
+}
+    if(cont<20){ //verifica se a casa que chegou pode mesmo existir no vetor
+        printf("existe na posição %d\n", cont);
+
     }
-    
-    
-    for(i=0; i<20; i++){ 
-        if((i==19)  && (j!=notas[i])){//aqui ele verifica se a nota existe dentre as que foram digitadas antes
-            printf("nao existe\n");
-        }
-        else{
-            if(j==notas[i]){
-                printf("existe\n");
-                break;//aqui ele para o laço de verificação quando acha se exite ou não
-            }
-        }
-        
+    else{
+        printf("não existe no vetor!!");
+
     }
 
-}
+
+
 
     return 0;
 }
 
-
-
-
-
-
- /* for(i=0; i<20; i++){
-        scanf("%f", &j);
-            if(notas==j){
-                printf("existe");
-            }
-            else{
-                printf("não existe");
-            }*/
-
-
-  
-    /*do{
-        scanf("%f", &notas[nota]);//le a nota
-        
-        if(notas[nota]>0){//verifica se é maior que 0
-        printf("existe\n");
-        }
-        
-        else{break;}
-    }
-    while(nota<20);*/
-    
-    
-            /*if(i<20){
-            i++;
-        }
-         if(j<20){
-             j++;
-         }
-        if(j==i){
-            printf("existe\n");
-        }
-        else{
-            printf("nao existe\n");
-        }*/
-    
