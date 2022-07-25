@@ -1,30 +1,23 @@
-#include <stdio.h> 
+#include <stdio.h>
 
-
-int main(){
-    float preco[10], lucro=0;
-    int quantidade[10], soma=0;
-    int p=0,q=0,i=0;
- 
- 
-    for(q=0; q<10;q++){    //leu e armazenou quantidade
-        scanf("%d", &quantidade[q]);
-    }
-       
-    for(p=0; p<10;p++){  //leu e armazenou preço
-        scanf("%f", &preco[p]);
-    }
+int main()
+{
+    int valores[10],quantidade[10],i,v,q,pv,ft;
     
-    
-    for(i=0;i<10;i++){ //aqui ele calcula o lucro 
-        lucro+= preco[i]*quantidade[i];
-        
-        soma+=quantidade[i]; //só colocou o vetor dentro de uma caixinha de variável
-    }
-        printf("O lucro foi de  %.3f e a quantidade de produtos vendidos foi de %d\n", lucro, soma );
-     
-     
-     
-        return 0;
-    }
+for(v=0;v<10;v++){
+    scanf("%d", &valores[v]);
+}
 
+for(q=0;q<10;q++){
+    scanf("%d", &quantidade[q]);
+}
+
+for(i=0;i<10;i++){
+    ft += quantidade[i]*valores[i];//ft vai armazenar o valor da multiplicação, e depois disso vai somar com o próximo valor da multiplicação, isso até todos os dados serem computados
+    pv += quantidade[i];//pv vai armazenar o valor da q[i] e na proxima volta do vetor, vai somar com q na proxima posição
+    
+}
+
+printf("o faturamento total da loja foi %d\n e o total de produtos vendidos foi %d\n", ft,pv);
+    return 0;
+}
