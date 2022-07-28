@@ -15,7 +15,7 @@ cont=0;
 // ele faz uma busca linear
 while((notas[cont]!=j)&& cont<20){//aqui ele vai processar as notas e rodar enquanto o conteudo da posição cont for diferente da nota digitada, e enqunto as posições estiverem em 20 
     cont++;
-}
+}//quando ele achar um igual ele vai sair do laço e fazer uma verificação
     if(cont<20){ //verifica se a casa que chegou pode mesmo existir no vetor
         printf("existe na posição %d\n", cont);
 
